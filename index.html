@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>藻华爆发推演模拟系统 | Algal Bloom Simulation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-body { padding: 3rem 1.5rem; text-align: center; }
+        .title { font-weight: 800; color: #209cee; } /* 蓝色主题 */
+        .subtitle { font-weight: 400; color: #4a4a4a; margin-top: 1rem; }
+        .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; text-align: center; border-bottom: 2px solid #f5f5f5; padding-bottom: 1rem; }
+        .content-block { margin-bottom: 3rem; }
+        .image-box { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .image-box:hover { transform: translateY(-5px); }
+        .footer { background-color: #fafafa; padding: 3rem 1.5rem 3rem; }
+    </style>
+</head>
+<body>
+
+    <section class="hero is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1">
+                    🌊 藻华爆发推演模拟系统
+                </h1>
+                <h2 class="subtitle is-3">
+                    Algal Bloom Simulation based on Environmental Factors
+                </h2>
+                <div class="block">
+                    <span class="tag is-info is-light is-medium">同济大学 课程作业</span>
+                    <span class="tag is-success is-light is-medium">C++ / Python</span>
+                    <span class="tag is-warning is-light is-medium">可视化仿真</span>
+                </div>
+                <div class="buttons is-centered">
+                    <a href="https://github.com/ylforange/Algal-Bloom-Simulation" class="button is-dark is-rounded">
+                        <span class="icon"><i class="fab fa-github"></i></span>
+                        <span>查看 GitHub 源码</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            
+            <div class="content-block">
+                <h2 class="section-title">📊 演示演示</h2>
+                <div class="columns is-centered">
+                    <div class="column is-10">
+                        <div class="notification is-info is-light has-text-centered">
+                            <p style="padding: 40px;">（此处展示推演过程的 GIF 动图或视频，请上传后替换）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h2 class="section-title">📝 项目概述</h2>
+                <div class="content is-medium">
+                    <p>
+                        本项目实现了一个基于<strong>环境动力学</strong>的藻华爆发推演工具。针对富营养化水体中藻类（如蓝藻）在不同光照、温度及水流条件下的生长与扩散过程进行模拟。
+                    </p>
+                    <p>
+                        系统通过构建<strong>数值模型</strong>（如元胞自动机或反应扩散方程），支持用户自定义初始污染物浓度、流场速度等参数，实时渲染藻华的时空分布演化。该工具可用于环境工程教学演示及早期预警机制的算法验证。
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h2 class="section-title">✨ 核心特性</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-4">
+                        <div class="box h-100">
+                            <h3 class="title is-4 has-text-info">多因子耦合</h3>
+                            <p>综合考虑了<strong>光照强度、水体温度、氮磷浓度</strong>等多种环境因子对藻类生长率的非线性影响。</p>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box h-100">
+                            <h3 class="title is-4 has-text-info">动态流场推演</h3>
+                            <p>内置流体扩散算法，模拟藻类随水流的<strong>迁移与扩散</strong>过程，真实还原水华爆发的动态轨迹。</p>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box h-100">
+                            <h3 class="title is-4 has-text-info">交互式可视化</h3>
+                            <p>提供实时渲染界面，支持<strong>参数热调节</strong>，可直观观察不同工况下的模拟结果对比。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h2 class="section-title">🖼️ 模拟结果</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-6">
+                        <div class="image-box">
+                            <figure class="image is-16by9">
+                                <img src="https://via.placeholder.com/640x360?text=Result+Image+1" alt="模拟结果1">
+                            </figure>
+                            <div class="p-3 has-text-centered has-text-grey">初始扩散阶段</div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="image-box">
+                            <figure class="image is-16by9">
+                                <img src="https://via.placeholder.com/640x360?text=Result+Image+2" alt="模拟结果2">
+                            </figure>
+                            <div class="p-3 has-text-centered has-text-grey">爆发高峰期热力图</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Algal Bloom Simulation</strong> by <a href="https://github.com/ylforange">ylforange</a>.
+                <br>
+                Powered by <a href="https://pages.github.com/">GitHub Pages</a> & Bulma CSS.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
