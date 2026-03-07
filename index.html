@@ -3,177 +3,157 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>太湖藻华爆发推演系统 | Algal Bloom Simulation</title>
+    <title>太湖藻华爆发推演系统 | 课程作业展示</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
-        .hero-bg { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
-        .hero-body { padding: 4rem 1.5rem; text-align: center; }
-        .title { font-weight: 800; color: #0a3d62; }
-        .subtitle { font-weight: 400; color: #4a4a4a; margin-top: 1rem; }
-        .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 2.5rem; text-align: center; position: relative; }
-        .section-title::after { content: ""; display: block; width: 60px; height: 4px; background: #3e8ed0; margin: 10px auto 0; border-radius: 2px; }
-        .content-block { margin-bottom: 4rem; }
-        .feature-box { height: 100%; padding: 2rem; border-radius: 12px; transition: all 0.3s ease; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .feature-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: #3e8ed0; }
-        .image-card { border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: white; }
-        .image-caption { padding: 10px; text-align: center; color: #666; font-size: 0.9rem; background: #f9f9f9; font-weight: bold; }
-        .tech-tag { margin-right: 5px; margin-bottom: 5px; }
-        footer { background: #f5f5f5; padding: 3rem 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #fcfcfc; color: #333; line-height: 1.6; }
+        /* 头部样式 */
+        .hero-section { padding: 4rem 1.5rem 2rem; text-align: center; }
+        .project-title { font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 0.5rem; }
+        .project-subtitle { font-size: 1.5rem; font-weight: 400; color: #555; margin-bottom: 1.5rem; }
+        /* 作者信息样式 */
+        .author-list { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .author-name { font-weight: 600; color: #2980b9; text-decoration: none; }
+        .affiliation { font-size: 1.1rem; color: #666; margin-bottom: 0.5rem; }
+        .course-info { font-size: 1rem; color: #888; font-style: italic; margin-bottom: 1.5rem; }
+        
+        /* 内容区样式 */
+        .content-container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .section-heading { font-size: 1.8rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; color: #2c3e50; }
+        .paragraph { font-size: 1.1rem; margin-bottom: 1.5rem; text-align: justify; }
+        
+        /* 图片与多媒体容器，防止图片过大模糊 */
+        .media-container { text-align: center; margin: 2rem 0; }
+        .media-container img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eaeaea; }
+        /* 限制特殊图片的最大宽度 */
+        .img-medium { max-width: 750px !important; } 
+        .img-large { max-width: 850px !important; }
+        .media-caption { font-size: 0.95rem; color: #666; margin-top: 0.8rem; font-weight: 500; }
+
+        /* 代码与标签 */
+        .tech-tags { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 2rem; }
+        .tag-custom { background-color: #edf2f7; color: #2d3748; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid #e2e8f0; }
+        
+        /* 公式框 */
+        .math-box { background: #f8f9fa; padding: 1rem; border-radius: 6px; border-left: 4px solid #3273dc; overflow-x: auto; margin-bottom: 1.5rem; }
+        
+        footer { padding: 3rem 0; text-align: center; color: #888; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 3rem; }
     </style>
 </head>
 <body>
 
-    <section class="hero hero-bg">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title is-1">
-                    🌊 太湖藻华爆发推演与管控系统
-                </h1>
-                <h2 class="subtitle is-3">
-                    High-Resolution Algal Bloom Simulation based on Optical Flow & Advection
-                </h2>
-                <div class="block" style="margin-top: 20px;">
-                    <span class="tag is-info is-light is-medium tech-tag"><i class="fas fa-code"></i>&nbsp;C++ / OpenCV</span>
-                    <span class="tag is-success is-light is-medium tech-tag"><i class="fas fa-satellite"></i>&nbsp;GDAL Remote Sensing</span>
-                    <span class="tag is-warning is-light is-medium tech-tag"><i class="fas fa-wind"></i>&nbsp;Optical Flow</span>
-                </div>
-                <div class="buttons is-centered" style="margin-top: 30px;">
-                    <a href="https://github.com/ylforange/Algal-Bloom-Simulation" class="button is-dark is-rounded is-medium">
-                        <span class="icon"><i class="fab fa-github"></i></span>
-                        <span>View on GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-widescreen">
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="project-title">🌊 太湖藻华爆发推演与管控系统</h1>
+            <h2 class="project-subtitle">High-Resolution Algal Bloom Simulation based on Optical Flow</h2>
             
-            <div class="content-block">
-                <div class="columns is-centered">
-                    <div class="column is-10">
-                        <div class="image-card" style="padding: 0; background: #000;">
-                            <img src="images/salvage_demo.gif" alt="藻华打捞全自动模拟" style="width: 100%; display: block;">
-                            <div class="image-caption">▶ 自动寻找最优打捞策略：太湖镇水源地保卫战动态模拟全过程</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="author-list">
+                <span class="author-name">岳立峰</span>
+            </div>
+            <div class="affiliation">同济大学 国豪书院</div>
+            <div class="course-info">高级语言程序设计(进阶) 课程作业 - 2025年秋季</div>
+
+            <div class="tech-tags">
+                <span class="tag-custom"><i class="fas fa-code"></i> C++ 14/17</span>
+                <span class="tag-custom"><i class="fas fa-eye"></i> OpenCV 4.x</span>
+                <span class="tag-custom"><i class="fas fa-satellite"></i> GDAL</span>
+                <span class="tag-custom"><i class="fas fa-cogs"></i> Visual Studio / CMake</span>
             </div>
 
-            <div class="content-block">
-                <h2 class="section-title">📖 项目概述</h2>
-                <div class="columns is-centered">
-                    <div class="column is-10">
-                        <div class="content is-medium">
-                            <p>
-                                本项目是一个针对<strong>太湖水域</strong>开发的藻华监测与推演系统。不同于传统的数值模拟，本系统采用<strong>数据驱动</strong>的方式，直接利用高分卫星（GF1/GF4）的多光谱遥感数据作为输入。
-                            </p>
-                            <p>
-                                系统通过计算 <strong>NDVI (归一化植被指数)</strong> 提取藻华时空分布，利用 <strong>Farneback 稠密光流算法</strong> 反演水体流场，并基于平流方程 (Advection Equation) 预测未来 8 小时的藻华扩散路径。此外，项目还包含一个<strong>“打捞船调度仿真模块”</strong>，用于评估在水源地受到威胁时的应急响应效率。
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="buttons is-centered">
+                <a href="https://github.com/ylforange/Algal-Bloom-Simulation" target="_blank" class="button is-dark is-rounded">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>GitHub Repository</span>
+                </a>
             </div>
-
-            <div class="content-block has-background-light p-5" style="border-radius: 10px;">
-                <h2 class="section-title">🧮 核心算法模型</h2>
-                <div class="columns">
-                    <div class="column is-4 has-text-centered">
-                        <h4 class="title is-5">1. 光谱特征提取</h4>
-                        <p>利用近红外(NIR)与红光(Red)波段计算植被指数，通过 Otsu 阈值分割提取藻类。</p>
-                        <div class="box mt-3">
-                            $$ NDVI = \frac{NIR - Red}{NIR + Red} $$
-                        </div>
-                    </div>
-                    <div class="column is-4 has-text-centered">
-                        <h4 class="title is-5">2. 流场反演 (Optical Flow)</h4>
-                        <p>基于亮度守恒假设，求解像素在 $t_0$ 到 $t_1$ 时刻的位移场 $\vec{V}$。</p>
-                        <div class="box mt-3">
-                            $$ I(x, y, t) = I(x+dx, y+dy, t+dt) $$
-                        </div>
-                    </div>
-                    <div class="column is-4 has-text-centered">
-                        <h4 class="title is-5">3. 动态推演 (Advection)</h4>
-                        <p>基于拉格朗日视角，计算藻类粒子在流场中的下一时刻位置。</p>
-                        <div class="box mt-3">
-                            $$ \vec{P}_{t+\Delta t} = \vec{P}_t + \vec{V}(\vec{P}_t) \cdot \Delta t $$
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-block">
-                <h2 class="section-title">✨ 系统功能</h2>
-                <div class="columns is-multiline">
-                    <div class="column is-4">
-                        <div class="feature-box">
-                            <span class="icon is-large has-text-info"><i class="fas fa-satellite fa-2x"></i></span>
-                            <h3 class="title is-4 mt-4">多源遥感解析</h3>
-                            <p>集成 <strong>GDAL</strong> 库，支持 TIFF 格式的高光谱/多光谱卫星数据直接读取。自动解析地理坐标投影，实现像素坐标到地理空间的映射。</p>
-                        </div>
-                    </div>
-                    <div class="column is-4">
-                        <div class="feature-box">
-                            <span class="icon is-large has-text-danger"><i class="fas fa-bell fa-2x"></i></span>
-                            <h3 class="title is-4 mt-4">入侵预警机制</h3>
-                            <p>内置太湖流域关键坐标（如沙渚、太湖镇水源地）。当模拟推演发现藻华进入警戒半径（如 500m）时，自动触发<strong>红色警报</strong>。</p>
-                        </div>
-                    </div>
-                    <div class="column is-4">
-                        <div class="feature-box">
-                            <span class="icon is-large has-text-success"><i class="fas fa-ship fa-2x"></i></span>
-                            <h3 class="title is-4 mt-4">打捞资源调度</h3>
-                            <p>独创的<strong>博弈模拟模块</strong>：模拟藻华扩散 vs 打捞船清理速度的动态平衡。通过贪心算法计算保卫水源地所需的最小船只数量。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-block">
-                <h2 class="section-title">🖼️ 模拟结果展示</h2>
-                <div class="columns is-multiline">
-                    <div class="column is-6">
-                        <div class="image-card">
-                            <figure class="image">
-                                <img src="images/Stage 1-Algae Distribution .png" alt="NDVI Extraction">
-                            </figure>
-                            <div class="image-caption">图1：基于 GF1/GF4 卫星数据的藻华分布提取 (NDVI)</div>
-                        </div>
-                    </div>
-                    <div class="column is-6">
-                        <div class="image-card">
-                            <figure class="image">
-                                <img src="images/Stage2-AlgaeDriftVelocity.png" alt="Velocity Field">
-                            </figure>
-                            <div class="image-caption">图2：利用 Farneback 算法反演的表面流速矢量场</div>
-                        </div>
-                    </div>
-                    <div class="column is-12">
-                        <div class="image-card">
-                            <figure class="image">
-                                <img src="images/Algae Salvage Simulation.png" alt="Salvage Simulation">
-                            </figure>
-                            <div class="image-caption">图3：水源地保护与打捞船调度仿真静态画面</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p>
-                <strong>Algal Bloom Simulation System</strong> | C++ Course Project 2025
-                <br>
-                Developed by <a href="https://github.com/ylforange">ylforange</a>
-            </p>
+    <div class="content-container" style="padding-top: 0;">
+        <div class="media-container">
+            <img src="images/salvage_demo.gif" alt="藻华打捞模拟GIF" class="img-large">
+            <div class="media-caption">图 1：太湖镇水源地保卫战 —— 动态打捞资源调度仿真 (GIF演示)</div>
+        </div>
+
+        <h2 class="section-title section-heading">1. 项目背景与概述</h2>
+        <p class="paragraph">
+            太湖作为长三角地区重要的饮用水源地，其水质安全直接关系到周边数百万居民的健康。近年来，受气候和水体富营养化影响，蓝藻水华频发。传统的网格化水动力数值模拟（如 Delft3D）需要极其复杂的边界条件，且计算开销巨大，难以满足突发性水污染事件的<strong>实时应急响应</strong>需求。
+        </p>
+        <p class="paragraph">
+            基于此背景，本项目采用<strong>“数据驱动”</strong>的新思路，利用 C++ 与 OpenCV 视觉库，直接对我国高分系列卫星（GF-1/GF-4）的多光谱遥感影像进行深度解析。系统不仅能提取和计算大面积水域的表面流场，还能基于平流扩散模型预测未来数小时内的藻华漂移路径，并最终集成了一个针对关键水源地的<strong>打捞船动态调度仿真模块</strong>。
+        </p>
+
+        <h2 class="section-title section-heading">2. 核心算法与原理解析</h2>
+        
+        <h3 class="title is-5 mt-5">2.1 遥感影像解析与 NDVI 特征提取</h3>
+        <p class="paragraph">
+            项目中集成 <code>GDAL</code> 库，直接读取包含地理坐标信息的 <code>.tif</code> 格式多光谱卫星数据。我们利用近红外波段（NIR）和红光波段（Red）对叶绿素的高反差特性，计算归一化植被指数 (NDVI)。随后利用大津法 (Otsu) 进行自适应阈值分割，精准提取出水面藻华覆盖的二值掩码像素。
+        </p>
+        <div class="math-box">
+            $$ NDVI = \frac{Band_{NIR} - Band_{Red}}{Band_{NIR} + Band_{Red}} $$
+        </div>
+
+        <h3 class="title is-5 mt-5">2.2 基于 Farneback 稠密光流的流场反演</h3>
+        <p class="paragraph">
+            获取 $t_0$ 与 $t_1$ 时刻的藻华分布后，如何知道水流往哪走？本项目没有求解复杂的 N-S 流体力学方程，而是巧妙地引入了计算机视觉中的<strong>光流法 (Optical Flow)</strong>。
+            根据亮度守恒假设，系统将两期 NDVI 影像输入 <code>cv::calcOpticalFlowFarneback</code> 算法，反演出每个像素点的 $X$ 和 $Y$ 方向位移，从而得到水面的表面流速矢量场 $\vec{V}(x,y)$。
+        </p>
+        <div class="math-box">
+            $$ I(x, y, t) = I(x + \Delta x, y + \Delta y, t + \Delta t) $$
+            $$ \frac{\partial I}{\partial x}v_x + \frac{\partial I}{\partial y}v_y + \frac{\partial I}{\partial t} = 0 $$
+        </div>
+
+        <h3 class="title is-5 mt-5">2.3 拉格朗日平流扩散与动态推演</h3>
+        <p class="paragraph">
+            在获得流场后，系统进入 <code>AlgaeSimulator</code> 模块。我们将每一个检测到的藻华像素视为独立的粒子，在拉格朗日坐标系下，利用计算出的流速矢量进行位置更新，从而推演出未来 8 小时甚至更长时间后的藻华扩散形态。
+        </p>
+        <div class="math-box">
+            $$ \vec{P}_{t+\Delta t} = \vec{P}_t + \vec{V}(\vec{P}_t) \cdot \Delta t $$
+        </div>
+
+        <h2 class="section-title section-heading">3. 运行结果与系统展示</h2>
+
+        <p class="paragraph">
+            系统依次执行数据解析、流场计算与打捞模拟，控制台将实时输出经纬度映射信息与预警状态。最终生成的可视化结果如下：
+        </p>
+
+        <div class="media-container">
+            <img src="images/Stage 1-Algae Distribution .png" alt="阶段1：藻华分布提取" class="img-medium">
+            <div class="media-caption">图 2：阶段一 - 原始卫星多光谱影像与 NDVI 藻华分布提取结果对比</div>
+        </div>
+        <p class="paragraph">
+            如上图所示，左侧为经过伪彩色映射的湖面状况，右侧为系统精准剥离的藻华掩码。系统为不同浓度的藻华赋予了从浅绿到深绿的渐变色彩，陆地部分则被完全屏蔽。
+        </p>
+
+        <div class="media-container">
+            <img src="images/Stage2-AlgaeDriftVelocity.png" alt="阶段2：表面流场矢量" class="img-medium">
+            <div class="media-caption">图 3：阶段二 - 利用 Farneback 光流法反演提取的藻华漂移流速矢量场</div>
+        </div>
+        <p class="paragraph">
+            图 3 展示了流速计算结果。红色的箭头代表水流的方向与相对大小。通过这种方法，我们可以清晰地看到局部水域中藻华被风力和水流驱动的物理趋势。
+        </p>
+
+        <div class="media-container">
+            <img src="images/Algae Salvage Simulation.png" alt="打捞模拟界面" class="img-medium">
+            <div class="media-caption">图 4：扩展功能 - 水源地保护与打捞船资源调度博弈模拟（运行静帧）</div>
+        </div>
+        <p class="paragraph">
+            上图为本项目的核心加分项：打捞模拟界面 (<code>AlgaeSalvageSim.cpp</code>)。
+            系统在太湖镇等关键水源地设定了警戒半径，并引入了“水源地生命值 (Health)”概念。红色高亮像素表示正在逼近警戒区的藻华，绿色圆圈表示打捞船的作用范围。系统利用贪心算法动态计算所需的船只数量，若打捞速度不及漂移速度，生命值将扣减直至任务失败。
+        </p>
+
+        <h2 class="section-title section-heading">4. 项目总结</h2>
+        <p class="paragraph">
+            本项目将 C++ 高级特性、OpenCV 图像处理与 GDAL 地理空间数据解析深度结合。通过“遥感提取 + 光流反演 + 动态博弈模拟”的闭环，实现了一个具备实际工程意义的蓝藻水华预警可视化系统。项目不仅巩固了面向对象编程思想，也锻炼了解决交叉学科实际问题的能力。
+        </p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 岳立峰. All Rights Reserved.</p>
+            <p>同济大学 国豪书院 | 高级语言程序设计(进阶)</p>
         </div>
     </footer>
 
