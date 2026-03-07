@@ -19,7 +19,7 @@
         .feature-box { height: 100%; padding: 2rem; border-radius: 12px; transition: all 0.3s ease; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .feature-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: #3e8ed0; }
         .image-card { border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: white; }
-        .image-caption { padding: 10px; text-align: center; color: #666; font-size: 0.9rem; background: #f9f9f9; }
+        .image-caption { padding: 10px; text-align: center; color: #666; font-size: 0.9rem; background: #f9f9f9; font-weight: bold; }
         .tech-tag { margin-right: 5px; margin-bottom: 5px; }
         footer { background: #f5f5f5; padding: 3rem 0; }
     </style>
@@ -56,10 +56,10 @@
             <div class="content-block">
                 <div class="columns is-centered">
                     <div class="column is-10">
-                        <div class="notification is-white has-text-centered" style="border: 2px dashed #dbdbdb; padding: 4rem;">
-                            <h3 class="title is-4 has-text-grey-light">📷 演示视频占位符</h3>
-                            <p class="subtitle is-6 has-text-grey-light">请运行代码录制屏幕，生成 GIF 后上传并替换此处</p>
-                            </div>
+                        <div class="image-card" style="padding: 0; background: #000;">
+                            <img src="images/salvage_demo.gif" alt="藻华打捞全自动模拟" style="width: 100%; display: block;">
+                            <div class="image-caption">▶ 自动寻找最优打捞策略：太湖镇水源地保卫战动态模拟全过程</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,26 +139,26 @@
                 <div class="columns is-multiline">
                     <div class="column is-6">
                         <div class="image-card">
-                            <figure class="image is-16by9">
-                                <img src="https://via.placeholder.com/800x450/cccccc/555555?text=Stage+1:+NDVI+Extraction" alt="NDVI Extraction">
+                            <figure class="image">
+                                <img src="images/Stage 1-Algae Distribution .png" alt="NDVI Extraction">
                             </figure>
                             <div class="image-caption">图1：基于 GF1/GF4 卫星数据的藻华分布提取 (NDVI)</div>
                         </div>
                     </div>
                     <div class="column is-6">
                         <div class="image-card">
-                            <figure class="image is-16by9">
-                                <img src="https://via.placeholder.com/800x450/cccccc/555555?text=Stage+2:+Flow+Field" alt="Velocity Field">
+                            <figure class="image">
+                                <img src="images/Stage2-AlgaeDriftVelocity.png" alt="Velocity Field">
                             </figure>
                             <div class="image-caption">图2：利用 Farneback 算法反演的表面流速矢量场</div>
                         </div>
                     </div>
                     <div class="column is-12">
                         <div class="image-card">
-                            <figure class="image is-3by1">
-                                <img src="https://via.placeholder.com/1200x400/cccccc/555555?text=Salvage+Simulation+Interface" alt="Salvage Simulation">
+                            <figure class="image">
+                                <img src="images/Algae Salvage Simulation.png" alt="Salvage Simulation">
                             </figure>
-                            <div class="image-caption">图3：水源地保护与打捞船调度仿真界面</div>
+                            <div class="image-caption">图3：水源地保护与打捞船调度仿真静态画面</div>
                         </div>
                     </div>
                 </div>
