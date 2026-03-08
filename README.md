@@ -72,16 +72,16 @@ $$\vec{P}_{t+\Delta t} = \vec{P}_t + \vec{V}(\vec{P}_t) \cdot \Delta t$$
 ```text
 Algal-Bloom-Simulation/
 │
-├── src/                      # C++ 源代码目录
-│   ├── main.cpp              # 主程序入口
-│   ├── ImageProcessor.cpp/h  # GDAL数据读取与NDVI提取
-│   ├── AlgaeTracker.cpp/h    # Farneback光流流场计算
-│   ├── AlgaeSimulator.cpp/h  # 平流扩散位置推演
-│   └── AlgaeSalvageSim.cpp/h # 打捞船调度博弈仿真模块
-│
 ├── images/                   # Markdown与网页展示素材
 │   ├── salvage_demo.gif
 │   └── ...
 │
+├── main.cpp                  # 主程序入口
+├── ImageProcessor.cpp/h      # GDAL数据读取与NDVI提取
+├── AlgaeTracker.cpp/h        # Farneback光流流场计算
+├── AlgaeSimulator.cpp/h      # 平流扩散位置推演
+├── AlgaeSalvageSim.cpp/h     # 打捞船调度博弈仿真模块
+│
+├── .gitignore                # Git忽略文件配置
 ├── index.html                # GitHub Pages 项目主页
 └── README.md                 # 项目说明文档
