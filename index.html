@@ -85,12 +85,24 @@
             <div class="media-caption">图 1：太湖镇水源地保卫战 —— 动态打捞资源调度仿真 (GIF演示)</div>
         </div>
 
-        <h2 class="section-title section-heading">1. 项目背景与概述</h2>
+        <h2 class="section-title section-heading">1. 项目背景与技术定位</h2>
         <p class="paragraph">
-            太湖作为长三角地区重要的饮用水源地，其水质安全直接关系到周边数百万居民的健康。近年来，受气候和水体富营养化影响，蓝藻水华频发。传统的网格化水动力数值模拟（如 Delft3D）需要极其复杂的边界条件，且计算开销巨大，难以满足突发性水污染事件的<strong>实时应急响应</strong>需求。
+            太湖作为长三角地区重要的饮用水源地，其水质安全直接关系到周边数百万居民的健康。传统的网格化水动力数值模拟（如 Delft3D）需要极其复杂的边界条件，难以满足突发性水污染事件的实时应急响应需求。基于此，本项目从零构建了一套<strong>“数据解析 - 视觉算法推演 - 前端可视化展示”的全链路管线 (Pipeline)</strong>。
         </p>
+
+        <div class="notification is-info is-light mt-4 mb-5" style="border-left: 4px solid #2980b9; background-color: #f0f8ff; padding: 1.5rem; border-radius: 4px;">
+            <h3 class="title is-5" style="color: #2c3e50; margin-bottom: 1rem;"><i class="fas fa-layer-group"></i> 💡 核心技术栈与工业管线 (Tech Pipeline) 映射</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 0.5rem; color: #4a4a4a;">本项目虽以生态推演为应用场景，但其核心架构高度契合<strong>游戏引擎底层、视觉算法管线与 AI 工具链</strong>的开发逻辑：</p>
+            <ul style="list-style-type: disc; margin-left: 1.5rem; font-size: 0.95rem; color: #4a4a4a; line-height: 1.6;">
+                <li><strong>传统 CV 分割与特征提取：</strong> 利用 OpenCV 与大津法 (Otsu) 实现了高对比度的掩码提取，展现了扎实的传统计算机视觉底子。</li>
+                <li><strong>运动矢量计算 (Motion Vectors)：</strong> 深入底层实现了 Farneback 稠密光流算法。该技术在游戏工业界常用于 TAA (时域抗锯齿) 与渲染插帧。</li>
+                <li><strong>粒子物理系统 (Particle Simulation)：</strong> 引入拉格朗日平流扩散方程，实现了类似于游戏引擎中 2D 流体/烟雾特效的高帧率物理演算与资源动态博弈调度。</li>
+                <li><strong>LLM 协同前端与工具链构建：</strong> 极度重视工具的易用性与交互体验，在大型语言模型 (LLM) 的深度辅助下，快速构建了本响应式前端页面，打通了底层算法到用户界面的“最后一公里”。</li>
+            </ul>
+        </div>
+        
         <p class="paragraph">
-            基于此背景，本项目采用<strong>“数据驱动”</strong>的新思路，利用 C++ 与 OpenCV 视觉库，直接对我国高分系列卫星（GF-1/GF-4）的多光谱遥感影像进行深度解析。系统不仅能提取和计算大面积水域的表面流场，还能基于平流扩散模型预测未来数小时内的藻华漂移路径，并最终集成了一个针对关键水源地的<strong>打捞船动态调度仿真模块</strong>。
+            系统不仅能提取和计算大面积水域的表面流场，还能预测未来数小时内的藻华漂移路径，并最终集成了一个针对关键水源地的打捞船动态调度仿真模块。
         </p>
 
         <h2 class="section-title section-heading">2. 核心算法与原理解析</h2>
